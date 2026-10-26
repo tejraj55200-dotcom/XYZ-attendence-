@@ -1,0 +1,134 @@
+यह रहा आपके आदर्श शिक्षण संस्थान का मास्टर डैशबोर्ड कोड। इसमें सभी विद्यालय और उनके स्टाफ के अवकाश की स्थिति कलर-कोडेड तरीके से दिखाई देगी, जिससे मॉनिटरिंग आसान हो जाएगी।
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>आदर्श शिक्षण संस्थान - मास्टर डैशबोर्ड</title>
+    <style>
+        * { box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #f4f6f9; margin: 0; padding: 20px; }
+        .container { max-width: 1200px; margin: auto; background: #fff; padding: 25px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        .header { text-align: center; border-bottom: 2px solid #2c3e50; padding-bottom: 15px; margin-bottom: 20px; }
+        .header h2 { margin: 0; color: #b71c1c; }
+        .header h3 { margin: 5px 0; color: #2c3e50; font-size: 18px; }
+        
+        .school-section { margin-bottom: 30px; background: #eef2f7; padding: 15px; border-radius: 6px; }
+        .school-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+        .school-header h4 { margin: 0; color: #1a5276; font-size: 20px; }
+
+        table { width: 100%; border-collapse: collapse; font-size: 14px; }
+        th, td { border: 1px solid #bdc3c7; padding: 10px; text-align: center; }
+        th { background-color: #1a5276; color: white; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+
+        /* Progress Bar Styles */
+        .progress-container { width: 100%; background-color: #ddd; border-radius: 4px; overflow: hidden; height: 20px; }
+        .progress-bar { height: 100%; text-align: center; color: white; font-size: 12px; line-height: 20px; font-weight: bold; }
+        
+        .status-badge { padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 12px; }
+        .status-green { background-color: #d4edda; color: #28a745; }
+        .status-red { background-color: #f8d7da; color: #dc3545; }
+
+        @media print {
+            body { padding: 0; background: white; }
+            .container { box-shadow: none; border: none; width: 100%; max-width: 100%; padding: 0; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h2>आदर्श शिक्षण संस्थान, नागौर</h2>
+        <h3>मास्टर मॉनिटरिंग डैशबोर्ड - अक्टूबर 2026</h3>
+    </div>
+
+    <!-- विद्यालय 1 का डेटा -->
+    <div class="school-section">
+        <div class="school-header">
+            <h4>1. शारदा बालिका निकेतन उच्च माध्यमिक, नागौर</h4>
+            <span class="status-badge status-green">सभी डेटा प्राप्त</span>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>क्र.</th>
+                    <th>नाम</th>
+                    <th>पद</th>
+                    <th>कुल देय अवकाश</th>
+                    <th>उपयोग किए गए</th>
+                    <th>अवकाश स्थिति (शेष)</th>
+                    <th>इस माह कटौती</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>श्रीमती अरुणा</td>
+                    <td>प्रधानाचार्या</td>
+                    <td>15</td>
+                    <td>6</td>
+                    <td>
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 40%; background-color: #28a745;">6 / 15</div>
+                        </div>
+                    </td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>श्रीमती प्रीति सोनी</td>
+                    <td>आचार्या</td>
+                    <td>15</td>
+                    <td>25.5</td>
+                    <td>
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 100%; background-color: #dc3545;">25.5 / 15</div>
+                        </div>
+                    </td>
+                    <td>10.5</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- विद्यालय 2 का डेटा -->
+    <div class="school-section">
+        <div class="school-header">
+            <h4>2. शारदा बालिका निकेतन उच्च प्राथमिक, नागौर</h4>
+            <span class="status-badge status-red">डेटा अभी लंबित</span>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>क्र.</th>
+                    <th>नाम</th>
+                    <th>पद</th>
+                    <th>कुल देय अवकाश</th>
+                    <th>उपयोग किए गए</th>
+                    <th>अवकाश स्थिति (शेष)</th>
+                    <th>इस माह कटौती</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>श्रीमती पुष्पा चौधरी</td>
+                    <td>आचार्या</td>
+                    <td>15</td>
+                    <td>7</td>
+                    <td>
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 46%; background-color: #28a745;">7 / 15</div>
+                        </div>
+                    </td>
+                    <td>0</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>
